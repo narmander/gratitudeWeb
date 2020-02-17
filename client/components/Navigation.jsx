@@ -1,28 +1,33 @@
 import React from 'react';
+import {Link}  from 'react-router-dom'
 import styled from 'styled-components';
 import Logo from 'Components/Logo';
 import { GREY, WHITE, YELLOW } from 'Styles/colors';
 
+
 export const Navigation = props => {
+	
 	return (
+
+		
 		<header>
 			<NavStyles>
 				<span className='logo'>
-					<a href='#'>
+					<Link to='/'>
 						<Logo />
-					</a>
+					</Link>
 				</span>
 				<nav>
 					<ul role='list' className='nav-options'>
 						<li>
-							<a href='#' className='about'>
+							<Link to='/about' className='about'>
 								About
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a href='#' className='download'>
+							<Link to='/download' className='download'>
 								Download App
-							</a>
+							</Link>
 						</li>
 						{props.loggedIn && (
 							<li>
@@ -42,6 +47,8 @@ export const Navigation = props => {
 		</header>
 	);
 };
+
+
 
 const NavStyles = styled.div`
 	background: ${WHITE};
